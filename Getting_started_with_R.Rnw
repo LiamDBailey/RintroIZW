@@ -226,10 +226,10 @@ one_plus_one_plus_one
 \end{frame}
 
 
-\section{Introducing functions}
+\section{Using functions and package}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{6. Introducing functions}
+\begin{frame}[fragile]{6a. Functions}
 For more complex tasks, we use \emph{functions}:
 \vspace{1em}
 <<using functions>>=
@@ -254,10 +254,8 @@ round(x = cv_x, digits = 2)
 Note: all what is written in red above are functions
 \end{frame}
 
-\section{How to use packages}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{7. How to use packages}
+\begin{frame}[fragile]{6b. Using packages}
 
 Packages contain new functions! They extend the functionality of \r \:
 \begin{itemize}
@@ -279,10 +277,27 @@ library(dplyr)
 @
 \end{frame}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\selectmanualcolour{red!75!black}
+\begin{frame}[fragile]{Important packages for this course}
+\vfill
+\begin{center}
+\begin{itemize}
+\item adegenet
+\item poppr
+\item pegas
+\item ggplot2
+\item lattice
+\item viridisLite
+\end{itemize}
+\end{center}
+\end{frame}
+\selectmanualcolour{blue!75!black}
+
 \section{Understanding a new function}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{8. Understanding a new function}
+\begin{frame}[fragile]{7. Understanding a new function}
 <<eval=F, echo=T>>=
 mean()
 @
@@ -315,7 +330,7 @@ Arguments:
 \section{Combining functions}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{9. Combining functions}
+\begin{frame}[fragile]{8. Combining functions}
 In \r, it is easy to write synonymous code that \emph{looks} very different:
 \vspace{1em}
 
@@ -346,7 +361,7 @@ c(1, 4, 10) %>%
 \section{How to import data into \r}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{10. How to import data into \r}
+\begin{frame}[fragile]{9. How to import data into \r}
 \r \ can read (and write) many file formats, such as:
 \begin{itemize}
 \item tabulated text files (\texttt{*.csv}, \texttt{*.txt}, \dots) $\rightarrow$ no pkg or \verb`{readr}`
@@ -363,7 +378,7 @@ For importing data you can often simply rely on the GUI\\ {\scriptsize (but copy
 \section{Manipulating vectors}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{11. Manipulating vectors}
+\begin{frame}[fragile]{10. Manipulating vectors}
 A vector contains all elements of the same type:
 <<vec0>>=
 ## Elements will be coerced
@@ -400,7 +415,7 @@ my_vec[my_vec %in% c("A", "B", "C")]
 \section{Manipulating data frames}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile, t]{12a. What is a data frame?}
+\begin{frame}[fragile, t]{11a. What is a data frame?}
 The most common class of objects used for storing data in \r \ is the \underline{data frame}!\\
 \vspace{1em}
 Example: the \texttt{calibration\_example1} dataset
@@ -419,7 +434,7 @@ calibration
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile, t]{12b. Basic data frame manipulation}
+\begin{frame}[fragile, t]{11b. Basic data frame manipulation}
 <<df2>>=
 calibration$y.tissue ## extract vector
 @
@@ -436,7 +451,7 @@ calibration
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile, t]{12c. How to use \texttt{\{dplyr\}} for data frames manipulation}
+\begin{frame}[fragile, t]{11c. How to use \texttt{\{dplyr\}} for data frames manipulation}
 You can all kind of data manipulation by combining 5 simple functions from \texttt{\{dplyr\}}:\\
 \vspace{1em}
 \begin{itemize}
@@ -462,7 +477,7 @@ calibration %>%
 \section{How to manipulate lists?}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{13. How to manipulate lists?}
+\begin{frame}[fragile]{12. How to manipulate lists?}
 Most functions doing something more complicated than simple arithmetic produce lists:\\
 <<list0>>=
 calib2sp <- calibration[calibration$site %in% c("A", "C"), ]
@@ -491,7 +506,7 @@ test_calib2sp[[3]]
 \section{Plotting in R}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{14. Plotting in R}
+\begin{frame}[fragile]{13. Plotting in R}
 There are many plotting systems in \r, such as:
 \vspace{1em}
 \begin{itemize}
@@ -528,7 +543,7 @@ Whatever you are using, plotting your data in very important! Defaults are alway
 \section{How to use \texttt{\{ggplot2\}} for an efficient production of plots?}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile, t]{15. How to use \texttt{\{ggplot2\}} for an efficient production of plots?}
+\begin{frame}[fragile, t]{14. How to use \texttt{\{ggplot2\}} for an efficient production of plots?}
 Idea: all plots are composed of the same elements (data + \textbf{aes}thetic mappings + \textbf{scale}s + a \textbf{coord}inate system + a \textbf{facet}ing specification + a \textbf{theme})\\
 \vspace{1em}
 We then build a plot by adding such components together:\\
@@ -549,7 +564,7 @@ ggplot(calibration) +
 \section{When to update what?}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{16. When to update what?}
+\begin{frame}[fragile]{15. When to update what?}
 Update:
 \begin{itemize}
 \item \r\ (at least once a year)
@@ -569,7 +584,7 @@ For packages:
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{17. How to reach level A2/B1?}
+\begin{frame}{16. How to reach level A2/B1?}
 There are many resources available at your disposal:
 \begin{columns}
 \column{0.6\linewidth}
@@ -621,7 +636,7 @@ There are many resources available at your disposal:
 \section{How to reach levels beyond B1?}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{18. How to reach levels beyond B1?}
+\begin{frame}{17. How to reach levels beyond B1?}
 This is not beyond your reach!
 \begin{itemize}
 \item try to help less advanced colleagues
