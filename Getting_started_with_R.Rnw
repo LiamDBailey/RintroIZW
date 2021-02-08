@@ -139,10 +139,10 @@ Best practice:
 \end{frame}
 
 
-\section{\r\ as a simple calculator}
+\section{\r\ basics}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{4. \r\ as a simple calculator}
+\begin{frame}[fragile]{4a. \r\ as a simple calculator}
 \begin{columns}[T]
 \column{0.5\linewidth}
 \r \ can perform basic arithmetic:
@@ -193,10 +193,8 @@ NB: {\large $\sqrt{x} = x^\frac{1}{2}$}
 \selectmanualcolour{blue!75!black}
 
 
-\section{How to store the results of operations}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{5. How to store the results of operations}
+\begin{frame}[fragile]{4b. How to store the results of operations}
 The results of operations are stored into \emph{objects} that are created using the ``arrow'' assignment operator:
 <<one plus one>>=
 one_plus_one <- 1 + 1 ## storing the result
