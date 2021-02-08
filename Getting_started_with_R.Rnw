@@ -97,6 +97,14 @@ Activate code diagnostics
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{3. How best to organise your work}
+\begin{center}
+Use the RStudio Integrated Development Environment (IDE)
+\includegraphics[width=0.9\linewidth]{figures/RStudio.png}
+\end{center}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{3. How best to organise your work}
 Before you start some new work in \r,
   \begin{enumerate}
     \item Create a new RStudio project (Menu / File / New Project... / \dots)
