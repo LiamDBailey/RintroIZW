@@ -14,8 +14,8 @@
 
 \def\r{{\bf R}}
 
-\title{20 Things You Need To Know About \r}
-\author[IZW]{Alexandre Courtiol @rdataberlin}
+\title{Introduction to \r}
+\author[IZW]{Liam Bailey @rdataberlin}
 \institute[]{Leibniz Institute of Zoo and Wildlife Research}%
 \titlegraphic{
 \vspace{1cm}
