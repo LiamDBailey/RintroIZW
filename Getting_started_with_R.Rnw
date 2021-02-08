@@ -50,7 +50,7 @@ opts_chunk$set("size" = "scriptsize",
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{20 Things You Need To Know About \r}
+\begin{frame}{Introduction to \r}
   \setcounter{tocdepth}{1}
   \begin{scriptsize}
   \tableofcontents
@@ -58,28 +58,25 @@ opts_chunk$set("size" = "scriptsize",
 \end{frame}
 
 
-\section{What are \r\ and RStudio?}
+\section{Why should you learn \r?}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[t]{1. What are \r\ and RStudio?}
-Why learning \r?
+\begin{frame}[t]{1. Why should you learn \r?}
+Why should you learn \r?
 \vspace{1em}
 \begin{itemize}
-\item best software out there for most data science tasks
-\item open source and free
-\item possible to learn for people with no background in computer science
-\item rich in functionality with close to 100,000 free packages\\ {\scriptsize (\url{https://rdrr.io}; \url{https://www.rdocumentation.org})}
-\item friendly large community\\ {\scriptsize (twitter \#rstats, \url{https://rfordatascience.slack.com}, \url{https://community.rstudio.com}, gatherings)}
+\item Best software out there for most data science tasks
+\item Open source and free
+\item Accessible without computer science background
+\item Rich in functionality with close to 100,000 free packages\\ {\scriptsize (\url{https://rdrr.io}; \url{https://www.rdocumentation.org})}
+\item Friendly large community\\ {\scriptsize (twitter \#rstats, \url{https://rfordatascience.slack.com}, \url{https://community.rstudio.com}, gatherings)}
 \end{itemize}
-\vfill
-RStudio is a GUI to \r\ that is fancier and more modern than the one provided by default
 \end{frame}
 
-
-\section{How to best setup \r\ \& RStudio?}
+\section{Setting up \r\ \& RStudio}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{2. How to best setup \r\ \& RStudio?}
+\begin{frame}[fragile]{2. Setting up \r\ \& RStudio}
 Open: Menu / Tools / Global options and set things as follows:
 \begin{columns}
 \column{0.5\linewidth}
@@ -96,39 +93,37 @@ Activate code diagnostics
 \end{frame}
 
 
-\section{How to best organise your work?}
+\section{How best to organise your work}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{3. How to best organise your work?}
+\begin{frame}[fragile]{3. How best to organise your work}
 Before you start some new work in \r,
   \begin{enumerate}
-    \item create a new RStudio project (Menu / File / New Project... / \dots)
-    \item create a new \r \ Script file (Menu / File / New File / R Script)
-    \item save the created \r \ Script file into the project folder directory
+    \item Create a new RStudio project (Menu / File / New Project... / \dots)
+    \item Create a new \r \ Script file (Menu / File / New File / R Script)
+    \item Save the created \r \ Script file into the project folder directory
   \end{enumerate}
 \vfill
 \textbf{NB:}
 \begin{itemize}
-\item an RStudio project is a folder containing the different files for a given project, including a simple project file that allows for us to open RStudio with the correct working directory set
-\item an \r \ Script is a (text) file where we can write \r \ code
-\item alternatives to \r \ Scripts exist to implement your work if you need to format text around your code (e.g. \r \ Markdown files)
+\item An RStudio project is a folder containing the different files for a given project. Includes a project file that allows us to open RStudio with the correct working directory
+\item An \r \ Script is a (text) file where we can write \r \ code
+\item Alternatives to \r \ Scripts exist to implement your work if you need to format text around your code (e.g. \r \ Markdown files <- more on this later!)
 \end{itemize}
 \end{frame}
 
 
-\section{How to write reproductible code?}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{4. How to write reproductible code?}
+\begin{frame}[fragile]{3. How best to organise your work}
 Best practice:
 \vspace{1em}
 \begin{enumerate}
-\item only use the \texttt{Console} pane to mess around
-\item write proper \r \ code in the \texttt{Source} pane
-\item comment thoroughly your \r \ script using \# signs
-\item re-run frequently your entire script to make sure that it works\\
+\item Only use the \texttt{Console} pane to mess around
+\item Write proper \r \ code in the \texttt{Source} pane
+\item Comment thoroughly your \r \ script using \# signs
+\item Re-run frequently your entire script to make sure that it works\\
 (after restarting the session: Menu / Session / Restart R)
-\item write down the version of the packages you are using as comments
+\item Write down the version of the packages you are using as comments
 \end{enumerate}
 \begin{center}
 \includegraphics[height = 4cm]{figures/rstudio_2020.png}
@@ -136,10 +131,10 @@ Best practice:
 \end{frame}
 
 
-\section{How to use \r\ as a simple calculator?}
+\section{\r\ as a simple calculator}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{5. How to use \r\ as a simple calculator?}
+\begin{frame}[fragile]{4. \r\ as a simple calculator}
 \begin{columns}[T]
 \column{0.5\linewidth}
 \r \ can perform basic arithmetic:
@@ -190,10 +185,10 @@ NB: {\large $\sqrt{x} = x^\frac{1}{2}$}
 \selectmanualcolour{blue!75!black}
 
 
-\section{How to store the results of operations?}
+\section{How to store the results of operations}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{6. How to store the results of operations?}
+\begin{frame}[fragile]{5. How to store the results of operations}
 The results of operations are stored into \emph{objects} that are created using the ``arrow'' assignment operator:
 <<one plus one>>=
 one_plus_one <- 1 + 1 ## storing the result
@@ -201,7 +196,7 @@ one_plus_one <- 1 + 1 ## storing the result
 \pause
 \vfill
 
-Objects can then be used through their name (that is the whole point):
+Objects can then be used through their name:
 
 <<display one plus one>>=
 one_plus_one ## displaying the result
@@ -220,16 +215,16 @@ one_plus_one_plus_one
 \begin{itemize}
 \item \verb+->+ works too (if you switch the left hand side and the right hand side)
 \item ``\texttt{\_}'' and ``\texttt{.}'' are OK but avoid spaces \& other weird characters in names
-\item names are case sensitive
+\item Names are case sensitive
 \end{itemize}
 \end{frame}
 
 
-\section{How to do things beyond simple algebra?}
+\section{Introducing functions}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{7. How to do things beyond simple algebra?}
-For doing more complex things, one has to use \emph{functions}:
+\begin{frame}[fragile]{6. Introducing functions}
+For more complex tasks, we use \emph{functions}:
 \vspace{1em}
 <<using functions>>=
 vector_x <- c(1, 4, 10)
@@ -253,11 +248,35 @@ round(x = cv_x, digits = 2)
 Note: all what is written in red above are functions
 \end{frame}
 
-
-\section{How to use a new function?}
+\section{How to use packages}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{8. How to use a new function?}
+\begin{frame}[fragile]{7. How to use packages}
+
+Packages contain new functions! They extend the functionality of \r \:
+\begin{itemize}
+\item For most users; e.g. \verb+{dplyr}+, \verb+{ggplot2}+
+\item For specific users; e.g. \verb+{IsoriX}+, \verb+{MixSIAR}+
+\item For developers creating packages; e.g. \verb+{devtools}+, \verb+{Rcpp}+
+\end{itemize}
+\vspace{1em}
+\pause
+Simple installation (once per \r\ installation):
+\begin{center}
+\includegraphics[height = 4cm]{figures/RStudio_packages_installation.png}
+\end{center}
+\vspace{1em}
+\pause
+Loading (once per session):
+<<results="hide", message=FALSE>>=
+library(dplyr)
+@
+\end{frame}
+
+\section{Understanding a new function}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{8. Understanding a new function}
 <<eval=F, echo=T>>=
 mean()
 @
@@ -287,10 +306,10 @@ Arguments:
 \end{frame}
 
 
-\section{How to decipher complex function calls?}
+\section{Combining functions}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{9. How to decipher complex function calls?}
+\begin{frame}[fragile]{9. Combining functions}
 In \r, it is easy to write synonymous code that \emph{looks} very different:
 \vspace{1em}
 
@@ -313,21 +332,19 @@ c(1, 4, 10) %>%
 \pause
 \begin{itemize}
 \item To decipher the first example, run things from the inside out step by step
-\item To decipher the second example, run things adding one line at a time
+\item To decipher the second example, run things one line at a time
 \end{itemize}
-\vfill
-Here the implementation from the previous slide was easier to read but this is not always the most natural way to write
 \end{frame}
 
 
-\section{How to import data in \r?}
+\section{How to import data into \r}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{10. How to import data in \r?}
-\r \ can read (and write) many formats storing data, such as:
+\begin{frame}[fragile]{10. How to import data into \r}
+\r \ can read (and write) many file formats, such as:
 \begin{itemize}
 \item tabulated text files (\texttt{*.csv}, \texttt{*.txt}, \dots) $\rightarrow$ no pkg or \verb`{readr}`
-\item MS Excel files (\texttt{*.xlsx}) $\rightarrow$ \verb`{readxl}`
+\item MS Excel files (\texttt{*.xls}, \texttt{*.xlsx}) $\rightarrow$ \verb`{readxl}`
 \item binary R files (\texttt{*.rda}, \texttt{*.RData}, \texttt{*.rds}) $\rightarrow$ no pkg
 \end{itemize}
 \vspace{1em}
@@ -337,11 +354,47 @@ For importing data you can often simply rely on the GUI\\ {\scriptsize (but copy
 \end{center}
 \end{frame}
 
-
-\section{How to manipulate data frames?}
+\section{Manipulating vectors}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile, t]{11a. How to manipulate data frames?}
+\begin{frame}[fragile]{11. Manipulating vectors}
+A vector contains all elements of the same type:
+<<vec0>>=
+## Elements will be coerced
+my_vec <- c(1, 2, 3, "A", "B", "C")
+my_vec
+@
+You can replace elements in a vector:
+<<vec1>>=
+my_vec[1] <- NA ## change is saved!
+my_vec
+@
+\vspace{1em}
+\pause
+You can select one or multiple elements:
+<<vec2>>=
+my_vec[2]
+my_vec[1:3] ## change is not saved unless you assign it
+@
+\vspace{1em}
+\pause
+Select all except...:
+<<vec3>>=
+my_vec[-1]
+@
+\vspace{1em}
+\pause
+You can select multiple using a vector of \texttt{logicals}:
+<<vec4>>=
+my_vec %in% c("A", "B", "C")
+my_vec[my_vec %in% c("A", "B", "C")]
+@
+\end{frame}
+
+\section{Manipulating data frames}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile, t]{12a. What is a data frame?}
 The most common class of objects used for storing data in \r \ is the \underline{data frame}!\\
 \vspace{1em}
 Example: the \texttt{calibration\_example1} dataset
@@ -352,15 +405,15 @@ calibration
 @
 \vfill
 \begin{itemize}
-\item each column is a variable, usually corresponding to a \underline{vector}\\ {\scriptsize (a series of elements of 1 type)}
-\item all columns have the same length {\scriptsize (rectangular format)}
-\item contains column names {\scriptsize (usually informative)} and row names {\scriptsize (usually not informative)}
+\item Each column is a variable, usually corresponding to a \underline{vector}\\ {\scriptsize (a series of elements of 1 type)}
+\item All columns have the same length {\scriptsize (rectangular format)}
+\item Contains column names {\scriptsize (usually informative)} and row names {\scriptsize (usually not informative)}
 \end{itemize}
 \end{frame}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile, t]{11b. How to manipulate data frames?}
+\begin{frame}[fragile, t]{12b. Basic data frame manipulation}
 <<df2>>=
 calibration$y.tissue ## extract vector
 @
@@ -376,97 +429,8 @@ calibration
 @
 \end{frame}
 
-
-\section{How to manipulate lists?}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{12. How to manipulate lists?}
-Most functions doing something more complicated than simple arithmetic produce lists:\\
-<<>>=
-calib2sp <- calibration[calibration$site %in% c("A", "C"), ]
-test_calib2sp <- t.test(y.tissue ~ lat, data = calib2sp)
-@
-\pause
-\begin{columns}[T]
-\column{0.65\linewidth}
-<<>>=
-str(test_calib2sp) ## reveals the (often hidden) structure of the list
-@
-\pause
-\column{0.3 \linewidth}
-You can extract named elements from lists as vectors in data frames:
-<<>>=
-test_calib2sp$p.value
-@
-\vspace{5em}
-You can extract elements from lists (named or not) using indexes too:
-<<>>=
-test_calib2sp[[3]]
-@
-\end{columns}
-\end{frame}
-
-
-\section{How to manipulate vectors?}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{13. How to manipulate vectors?}
-You can replace elements:
-<<vec0>>=
-calibration$y.tissue[1] <- NA ## change is saved!
-@
-\vspace{1em}
-\pause
-You can select multiple elements:
-<<vec1>>=
-calibration$y.tissue[1:10] ## change is not saved unless you assign it
-@
-\vspace{1em}
-\pause
-You can select multiple using a vector of \texttt{logicals}:
-<<vec3>>=
-calibration$site == "A"
-calibration$y.tissue[calibration$site == "A"]
-@
-\vspace{1em}
-\pause
-You can remove elements:
-<<vec2>>=
-calibration$y.tissue[-2]
-@
-\end{frame}
-
-
-\section{How to use packages?}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{14. How to use packages?}
-
-Packages extend \r \ functionalities:
-\begin{itemize}
-\item for most users; e.g. \verb+{dplyr}+, \verb+{ggplot2}+
-\item for specific users; e.g. \verb+{IsoriX}+, \verb+{MixSIAR}+
-\item for developers creating packages; e.g. \verb+{devtools}+, \verb+{Rcpp}+
-\end{itemize}
-\vspace{1em}
-\pause
-Simple installation (once per \r\ installation):
-\begin{center}
-\includegraphics[height = 4cm]{figures/RStudio_packages_installation.png}
-\end{center}
-\vspace{1em}
-\pause
-Loading (once per session):
-<<results="hide", message=FALSE>>=
-library(dplyr)
-@
-\end{frame}
-
-
-\section{How to use \texttt{\{dplyr\}} for an efficient manipulation of data frames?}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile, t]{15. How to use \texttt{\{dplyr\}} for an efficient manipulation of data frames?}
+\begin{frame}[fragile, t]{12c. How to use \texttt{\{dplyr\}} for data frames manipulation}
 You can all kind of data manipulation by combining 5 simple functions from \texttt{\{dplyr\}}:\\
 \vspace{1em}
 \begin{itemize}
@@ -479,7 +443,7 @@ You can all kind of data manipulation by combining 5 simple functions from \text
 \vspace{1em}
 \pause
 Example:
-<<grouped df>>=
+<<df5>>=
 calibration %>%
   filter(site != "A") %>%
   mutate(y.tissue.not.permil = y.tissue / 1000) %>%
@@ -489,10 +453,39 @@ calibration %>%
 \end{frame}
 
 
-\section{How to plot things?}
+\section{How to manipulate lists?}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{16. How to plot things?}
+\begin{frame}[fragile]{13. How to manipulate lists?}
+Most functions doing something more complicated than simple arithmetic produce lists:\\
+<<list0>>=
+calib2sp <- calibration[calibration$site %in% c("A", "C"), ]
+test_calib2sp <- t.test(y.tissue ~ lat, data = calib2sp)
+@
+\pause
+\begin{columns}[T]
+\column{0.65\linewidth}
+<<list1>>=
+str(test_calib2sp) ## reveals the (often hidden) structure of the list
+@
+\pause
+\column{0.3 \linewidth}
+You can extract named elements from lists as vectors in data frames:
+<<list2>>=
+test_calib2sp$p.value
+@
+\vspace{5em}
+You can extract elements from lists (named or not) using indexes too:
+<<list3>>=
+test_calib2sp[[3]]
+@
+\end{columns}
+\end{frame}
+
+\section{Plotting in R}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{14. Plotting in R}
 There are many plotting systems in \r, such as:
 \vspace{1em}
 \begin{itemize}
@@ -529,7 +522,7 @@ Whatever you are using, plotting your data in very important! Defaults are alway
 \section{How to use \texttt{\{ggplot2\}} for an efficient production of plots?}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile, t]{17. How to use \texttt{\{ggplot2\}} for an efficient production of plots?}
+\begin{frame}[fragile, t]{15. How to use \texttt{\{ggplot2\}} for an efficient production of plots?}
 Idea: all plots are composed of the same elements (data + \textbf{aes}thetic mappings + \textbf{scale}s + a \textbf{coord}inate system + a \textbf{facet}ing specification + a \textbf{theme})\\
 \vspace{1em}
 We then build a plot by adding such components together:\\
@@ -550,7 +543,7 @@ ggplot(calibration) +
 \section{When to update what?}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{18. When to update what?}
+\begin{frame}[fragile]{16. When to update what?}
 Update:
 \begin{itemize}
 \item \r\ (at least once a year)
@@ -570,7 +563,7 @@ For packages:
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{19. How to reach level A2/B1?}
+\begin{frame}{17. How to reach level A2/B1?}
 There are many resources available at your disposal:
 \begin{columns}
 \column{0.6\linewidth}
@@ -622,7 +615,7 @@ There are many resources available at your disposal:
 \section{How to reach levels beyond B1?}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{20. How to reach levels beyond B1?}
+\begin{frame}{18. How to reach levels beyond B1?}
 This is not beyond your reach!
 \begin{itemize}
 \item try to help less advanced colleagues
