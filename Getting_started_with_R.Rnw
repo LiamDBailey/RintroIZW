@@ -24,7 +24,7 @@
 \hspace{2cm}
 \includegraphics[height=2cm]{figures/FU}
 }
-\date[September 2020]{\small September 2020}%
+\date[February 2021]{\small February 2021}%
 
 \begin{document}
 \selectmanualcolour{blue!75!black}%set main colour
