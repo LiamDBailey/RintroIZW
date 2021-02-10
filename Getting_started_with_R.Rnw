@@ -62,7 +62,6 @@ opts_chunk$set("size" = "scriptsize",
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[t]{1. Why should you learn \r?}
-Why should you learn \r?
 \vspace{1em}
 \begin{itemize}
 \item Best software out there for most data science tasks
@@ -142,7 +141,7 @@ Best practice:
 \section{\r\ basics}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{4a. \r\ as a simple calculator}
+\begin{frame}[fragile]{4. \r\ basics}
 \begin{columns}[T]
 \column{0.5\linewidth}
 \r \ can perform basic arithmetic:
@@ -194,7 +193,7 @@ NB: {\large $\sqrt{x} = x^\frac{1}{2}$}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{4b. How to store the results of operations}
+\begin{frame}[fragile]{4. \r\ basics}
 The results of operations are stored into \emph{objects} that are created using the ``arrow'' assignment operator:
 <<one plus one>>=
 one_plus_one <- 1 + 1 ## storing the result
@@ -229,7 +228,7 @@ one_plus_one_plus_one
 \section{Using functions and package}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{5a. Functions}
+\begin{frame}[fragile]{5. Using functions and package}
 For more complex tasks, we use \emph{functions}:
 \vspace{1em}
 <<using functions>>=
@@ -255,7 +254,7 @@ Note: all what is written in red above are functions
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{5b. Using packages}
+\begin{frame}[fragile]{5. Using functions and package}
 
 Packages contain new functions! They extend the functionality of \r \:
 \begin{itemize}
@@ -405,8 +404,11 @@ Select all except:
 <<vec3>>=
 my_vec[-1]
 @
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{9. Manipulating vectors}
 \vspace{1em}
-\pause
 You can select multiple using a vector of \texttt{logicals}:
 <<vec4>>=
 my_vec %in% c("A", "B", "C")
@@ -417,9 +419,10 @@ my_vec[my_vec %in% c("A", "B", "C")]
 \section{Manipulating data frames}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile, t]{10a. What is a data frame?}
+\begin{frame}[fragile, t]{10. Manipulating data frames}
 The most common class of objects used for storing data in \r \ is the \underline{data frame}!\\
 \vspace{1em}
+\pause
 Example: the \texttt{calibration\_example1} dataset
 <<df, message = FALSE>>=
 library(readr)
@@ -427,6 +430,7 @@ calibration <- read_csv("data/calibration_example1.csv")
 calibration
 @
 \vfill
+\pause
 \begin{itemize}
 \item Each column is a variable, usually corresponding to a \underline{vector}\\ {\scriptsize (a series of elements of 1 type)}
 \item All columns have the same length {\scriptsize (rectangular format)}
@@ -436,7 +440,8 @@ calibration
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile, t]{10b. Basic data frame manipulation}
+\begin{frame}[fragile, t]{10. Manipulating data frames}
+We can manipulate data frames using inbuilt R functionality
 <<df2>>=
 ## extract vector
 calibration$y.tissue
@@ -455,8 +460,8 @@ calibration
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile, t]{10c. How to use \texttt{\{dplyr\}} for data frames manipulation}
-You can all kind of data manipulation by combining 5 simple functions from \texttt{\{dplyr\}}:\\
+\begin{frame}[fragile, t]{10. Manipulating data frames}
+You can achieve all kinds of data manipulation by combining 5 simple functions from \texttt{\{dplyr\}}:\\
 \vspace{1em}
 \begin{itemize}
 \item \texttt{select()}    to keep or discard columns
@@ -491,15 +496,16 @@ test_calib2sp <- t.test(y.tissue ~ lat, data = calib2sp)
 \begin{columns}[T]
 \column{0.65\linewidth}
 <<list1>>=
-str(test_calib2sp) ## reveals the (often hidden) structure of the list
+## reveals the (often hidden) structure of the list
+str(test_calib2sp)
 @
 \pause
 \column{0.3 \linewidth}
-You can extract named elements from lists as vectors in data frames:
+You can extract \textit{named} elements from lists:
 <<list2>>=
 test_calib2sp$p.value
 @
-\vspace{5em}
+\vspace{7em}
 You can extract elements from lists (named or not) using indexes too:
 <<list3>>=
 test_calib2sp[[3]]
@@ -581,11 +587,11 @@ For packages:
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{How to reach level A2/B1?}
+\section{How to reach level A2/B1}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{14. How to reach level A2/B1?}
+\begin{frame}{15. How to reach level A2/B1}
 There are many resources available at your disposal:
 \begin{columns}
 \column{0.6\linewidth}
@@ -634,10 +640,10 @@ There are many resources available at your disposal:
 \end{frame}
 
 
-\section{How to reach levels beyond B1?}
+\section{How to reach levels beyond B1}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{15. How to reach levels beyond B1?}
+\begin{frame}{16. How to reach levels beyond B1}
 This is not beyond your reach!
 \begin{itemize}
 \item try to help less advanced colleagues
