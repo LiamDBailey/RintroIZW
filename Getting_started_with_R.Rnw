@@ -550,16 +550,15 @@ Whatever you are using, plotting your data in very important! Defaults are alway
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile, t]{12. How to use \texttt{\{ggplot2\}} for an efficient production of plots?}
+\begin{frame}[fragile, t]{12. Plotting in R}
+\verb`{ggplot2}` is a powerful tool for plotting
 Idea: all plots are composed of the same elements (data + \textbf{aes}thetic mappings + \textbf{scale}s + a \textbf{coord}inate system + a \textbf{facet}ing specification + a \textbf{theme})\\
-\vspace{1em}
-We then build a plot by adding such components together:\\
 \vspace{1em}
 <<layer_multiples_layers, out.width = "0.3\\linewidth", out.height = "0.2\\linewidth", message = FALSE, size = "tiny">>=
 ggplot(calibration) +
   aes(x = lat, y = y.tissue, colour = site) +
   geom_point() +
-  geom_rug(sides = "l") + ## l for right!
+  geom_rug(sides = "l") + ## l for left!
   scale_x_continuous("Lattitude") +
   theme_minimal()
 @
@@ -567,11 +566,59 @@ ggplot(calibration) +
 \textbf{Note:} check \url{https://www.r-graph-gallery.com} for examples
 \end{frame}
 
-
-\section{When to update what?}
+\section{\r\ Markdown}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{13. When to update what?}
+\begin{frame}[fragile]{13. \r\ Markdown}
+\r\ Markdown is a powerful tool to combine code and text using Markdown language and generate HTML or PDF documents
+\vspace{1em}
+\begin{center}
+\includegraphics[height=0.7\textheight]{figures/RMarkdown_example.png}
+\end{center}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{13. \r\ Markdown}
+\r\ Markdown is a powerful tool to combine code and text using Markdown language and generate HTML or PDF documents
+\vspace{1em}
+\begin{center}
+\includegraphics[height=0.7\textheight]{figures/RMarkdown_example_html.png}
+\end{center}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{13. \r\ Markdown}
+Markdown tricks:
+\vspace{1em}
+\begin{itemize}
+\item \#title
+\item \#\#subtitle
+\item \_italic\_
+\item **bold**
+\item **\_italic and bold\_**
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{13. \r\ Markdown}
+R chunk tricks for knitting:
+\vspace{1em}
+\begin{itemize}
+\item \textit{echo = FALSE}: Hide the code but show the output
+\item \textit{eval = FALSE}: Don't run the code
+\item \textit{include = FALSE}: Run the code but hide the code and output
+\item \textit{fig.height/fig.width}: Adjust the size of figures
+\end{itemize}
+
+\end{frame}
+
+\section{When should I update?}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{14. When should I update?}
 Update:
 \begin{itemize}
 \item \r\ (at least once a year)
