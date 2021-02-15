@@ -386,7 +386,7 @@ my_vec
 \pause
 You can replace elements in a vector:
 <<vec1>>=
-my_vec[1] <- NA ## change is saved!
+my_vec[1] <- NA ## change is permanent!
 my_vec
 @
 \vspace{1em}
@@ -451,8 +451,8 @@ calibration[calibration$site == "B", c("lat", "long", "y.tissue")]
 @
 \pause
 <<df4>>=
-calibration$sd.y.tissue <- NULL ## delete a column
-calibration$species <- "my species" ## add a column
+calibration$sd.y.tissue <- NULL ## delete a column. Change is permanent!
+calibration$species <- "my species" ## add a column.
 calibration
 @
 \end{frame}
@@ -481,10 +481,10 @@ calibration %>%
 \end{frame}
 
 
-\section{How to manipulate lists?}
+\section{Manipulating lists}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{11. How to manipulate lists?}
+\begin{frame}[fragile]{11. Manipulating lists}
 Most functions doing something more complicated than simple arithmetic produce lists:\\
 <<list0>>=
 calib2sp <- calibration[calibration$site %in% c("A", "C"), ]
@@ -550,6 +550,7 @@ Whatever you are using, plotting your data in very important! Defaults are alway
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile, t]{12. Plotting in R}
 \verb`{ggplot2}` is a powerful tool for plotting
+\vspace{1em}
 Idea: all plots are composed of the same elements (data + \textbf{aes}thetic mappings + \textbf{scale}s + a \textbf{coord}inate system + a \textbf{facet}ing specification + a \textbf{theme})\\
 \vspace{1em}
 <<layer_multiples_layers, out.width = "0.3\\linewidth", out.height = "0.2\\linewidth", message = FALSE, size = "tiny">>=
