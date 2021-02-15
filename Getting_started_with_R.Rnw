@@ -21,8 +21,6 @@
 \vspace{1cm}
 \centering
 \includegraphics[height=2cm]{figures/izw_logo}
-\hspace{2cm}
-\includegraphics[height=2cm]{figures/FU}
 }
 \date[February 2021]{\small February 2021}%
 
